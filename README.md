@@ -56,29 +56,7 @@ The goal is to show not just that I can build models, but that I can **connect t
 
 ## 📁 Projects
 
-### 💳 1. Credit Card Approval Prediction
-
-**📌 Objective — the business problem**
-Lenders have to decide which applicants to approve for a credit card — a classic **consumer credit-risk** problem. Approving an applicant who later defaults exposes the lender to losses, while rejecting a creditworthy applicant means giving up revenue. This project builds a classification model that predicts the approval decision, helping the business balance **risk mitigation** (avoiding bad debt) against **profit maximization** (keeping good customers).
-
-**⚙️ Approach**
-Implemented a complete machine-learning pipeline: exploring and visualizing the applicant data, one-hot encoding categorical fields, standardizing numeric features, and correcting a severe class imbalance (only ~0.5% of records were rejections) using **SMOTETomek** resampling. Five models were then trained and compared, each tuned through cross-validated hyperparameter search. Crucially, the training and test sets were preprocessed **separately to prevent data leakage**, keeping the evaluation honest.
-
-**💻 Tech Stack**
-`Python` · `pandas` · `NumPy` · `scikit-learn` · `imbalanced-learn` · `TensorFlow / Keras` · `Matplotlib` · `Seaborn`
-
-**📈 Key Results & Insights**
-- The dataset was **highly imbalanced (~99.5% approvals)**, so resampling and class weighting were essential for the models to learn to recognize high-risk applicants at all.
-- **Logistic Regression and SVM delivered the strongest results** — on the held-out test set the logistic model correctly identified the high-risk (reject) applicants while keeping false approvals at essentially zero, exactly the behavior a lender wants from a risk model.
-- **Tree-based models (Decision Tree, Random Forest)** also performed well but were more sensitive to hyperparameter choices.
-- A **neural network** was built and extensively tuned, but did not outperform the simpler models — a practical reminder that more complex models aren't always better for structured, tabular data.
-- **Main takeaway:** disciplined data preprocessing (handling imbalance + feature scaling) had a larger impact on final performance than model complexity.
-
-**📓 Notebook:** [`credit_card_project.ipynb`](./credit_card_project.ipynb)
-
----
-
-### 🏦 2. Bank Probability-of-Default (PD) Modeling — Scorecard, XGBoost & Explainable AI
+### 🏦 1. Bank Probability-of-Default (PD) Modeling — Scorecard, XGBoost & Explainable AI
 
 **📌 Objective — the business problem**
 Banks and their regulators need to estimate each borrower's **Probability of Default (PD)** — the chance it fails to repay — in order to rank, price, and provision for credit risk. In a regulated setting a PD model can't be a pure black box: it must be **accurate, well-calibrated, stable over time, and explainable** enough to satisfy internal model-risk governance and supervisors. This project builds exactly that on a panel of **~35,000 bank-year observations** (26 financial-ratio features, ~2.8% default rate), delivering both a transparent regulatory **scorecard** and a high-performance **challenger** model.
@@ -101,7 +79,7 @@ A complete, audit-ready credit-risk pipeline covering the full modeling lifecycl
 
 ---
 
-### 🏢 3. Corporate Probability-of-Default (PD) Modeling — Econometric Models, Expert Benchmark & Robust Inference
+### 🏢 2. Corporate Probability-of-Default (PD) Modeling — Econometric Models, Expert Benchmark & Robust Inference
 
 **📌 Objective — the business problem**
 Lenders assessing **corporate** borrowers estimate each company's **Probability of Default (PD)** by combining its history with expert financial assessments (profitability, liquidity, access to credit, management quality, and so on). The emphasis here is on a model that is **statistically rigorous, interpretable, and defensible** — the qualities a credit-risk function and its regulators demand — and on honestly benchmarking it against the firm's existing **expert scorecard**.
@@ -120,6 +98,28 @@ An end-to-end, leakage-aware PD pipeline built for **statistical rigor over raw 
 - The notebook is candid about its **limitations** (e.g., the expert-assessment features partly encode the credit decision, inflating discrimination; out-of-time and PSI testing would be required for production) — the kind of critical, honest self-assessment expected in model-risk work.
 
 **📓 Notebook:** [`credit_risk_pd.ipynb`](./credit_risk_pd.ipynb)
+
+---
+
+### 💳 3. Credit Card Approval Prediction
+
+**📌 Objective — the business problem**
+Lenders have to decide which applicants to approve for a credit card — a classic **consumer credit-risk** problem. Approving an applicant who later defaults exposes the lender to losses, while rejecting a creditworthy applicant means giving up revenue. This project builds a classification model that predicts the approval decision, helping the business balance **risk mitigation** (avoiding bad debt) against **profit maximization** (keeping good customers).
+
+**⚙️ Approach**
+Implemented a complete machine-learning pipeline: exploring and visualizing the applicant data, one-hot encoding categorical fields, standardizing numeric features, and correcting a severe class imbalance (only ~0.5% of records were rejections) using **SMOTETomek** resampling. Five models were then trained and compared, each tuned through cross-validated hyperparameter search. Crucially, the training and test sets were preprocessed **separately to prevent data leakage**, keeping the evaluation honest.
+
+**💻 Tech Stack**
+`Python` · `pandas` · `NumPy` · `scikit-learn` · `imbalanced-learn` · `TensorFlow / Keras` · `Matplotlib` · `Seaborn`
+
+**📈 Key Results & Insights**
+- The dataset was **highly imbalanced (~99.5% approvals)**, so resampling and class weighting were essential for the models to learn to recognize high-risk applicants at all.
+- **Logistic Regression and SVM delivered the strongest results** — on the held-out test set the logistic model correctly identified the high-risk (reject) applicants while keeping false approvals at essentially zero, exactly the behavior a lender wants from a risk model.
+- **Tree-based models (Decision Tree, Random Forest)** also performed well but were more sensitive to hyperparameter choices.
+- A **neural network** was built and extensively tuned, but did not outperform the simpler models — a practical reminder that more complex models aren't always better for structured, tabular data.
+- **Main takeaway:** disciplined data preprocessing (handling imbalance + feature scaling) had a larger impact on final performance than model complexity.
+
+**📓 Notebook:** [`credit_card_project.ipynb`](./credit_card_project.ipynb)
 
 ---
 
