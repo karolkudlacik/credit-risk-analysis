@@ -138,7 +138,7 @@ Each notebook is organized to read top-to-bottom: problem framing → data explo
 
 I'm always open to discussing data science, quantitative risk, machine learning, or new opportunities. Feel free to reach out:
 
-- 📧 **Email:** [your.email@example.com](karol.kudlacik@outlook.com)
-- 💼 **LinkedIn:** [linkedin.com/in/your-profile](www.linkedin.com/in/karol-kudlacik)
-- 🌐 **Portfolio / Website:** [your-website.com](https://github.com/karolkudlacik/karolkudlacik)
+- 📧 **Email:** [karol.kudlacik@outlook.com]
+- 💼 **LinkedIn:** [www.linkedin.com/in/karol-kudlacik]
+- 🌐 **Portfolio / Website:** [https://github.com/karolkudlacik/karolkudlacik]
 
